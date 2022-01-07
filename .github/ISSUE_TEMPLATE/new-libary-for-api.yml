@@ -1,0 +1,35 @@
+name: New libary for API
+about: Describe about your libary
+title: New libary for API
+labels: libary
+body:
+  - type: input
+    id: Programinglang
+    attributes: Programing language
+    placeholder: TypeScript
+    validations:
+      required: true
+  - type: input
+    id: URL
+    attributes: URI to libary (Github)
+    placeholder: https://github.com/genshin-info/genshin-info.js
+    validations:
+      required: true
+  - type: input
+    id: Screenshot
+    attributes: Screenshot of tests
+    placeholder:https://imgur.com/
+    validations:
+      required: true
+  - type: textarea
+    id: testcode
+    attributes: Example code for tests
+    placeholder: |
+      ```typescript
+      import { GenshinInfoClient } from 'genshin-info-api';
+      await new GenshinInfoClient('TOKEN').getCharacters({lang: "RU"})
+      ```
+    validations:
+      required: true
+
+

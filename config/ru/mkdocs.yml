@@ -5,7 +5,7 @@ docs_dir: '../../docs/ru'
 site_dir: '../../generated/ru'
 site_description: >-
   Документация к API Genshin Info
-copyright: Genshin info &copy 2021. Все права защищены.
+copyright: Genshin info &copy 2022. Все права защищены.
 theme:
   name: material
   custom_dir: '../../overrides/'
@@ -71,10 +71,11 @@ markdown_extensions:
       permalink: '#'
       baselevel: 2
       separator: "_"
+  - pymdownx.tabbed:
+      alternate_style: true
 nav:
   - Главная: index.md
   - API:
-      - Основы: api/index.md
       - Персонажи: api/charteres.md
       - Артефакты: api/artefacts.md
   - Часто заваемые вопросы: faq.md
