@@ -18,7 +18,7 @@ body:
   - type: input
     id: Screenshot
     attributes: Screenshot of tests
-    placeholder:https://imgur.com/
+    placeholder: https://imgur.com/
     validations:
       required: true
   - type: textarea
