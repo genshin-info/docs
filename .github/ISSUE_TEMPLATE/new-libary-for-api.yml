@@ -10,19 +10,22 @@ body:
       required: true
   - type: input
     id: URL
-    attributes: URI to libary (Github)
+    attributes:
+      label: URI to libary (Github)
     placeholder: https://github.com/genshin-info/genshin-info.js
     validations:
       required: true
   - type: input
     id: Screenshot
-    attributes: Screenshot of tests
+    attributes:
+      label: Screenshot of tests
     placeholder: https://imgur.com/
     validations:
       required: true
   - type: textarea
     id: testcode
-    attributes: Example code for tests
+    attributes:
+      label: Example code for tests
     placeholder: |
       ```typescript
       import { GenshinInfoClient } from 'genshin-info-api';
