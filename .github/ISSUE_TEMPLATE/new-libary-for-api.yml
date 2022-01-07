@@ -27,14 +27,3 @@ body:
       placeholder: "https://imgur.com/"
     validations:
       required: true
-  - type: textarea
-    id: testcode
-    attributes:
-      render: typescript
-      label: "Example code for tests"
-      description: "Example code for tests libary"
-      placeholder: |
-        import { GenshinInfoClient } from 'genshin-info-api';
-        await new GenshinInfoClient('TOKEN').getCharacters({lang: "RU"})
-    validations:
-      required: true
