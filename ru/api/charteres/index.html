@@ -293,20 +293,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        Основы
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -343,12 +329,38 @@
     Получение всего списка персонажей
   </a>
   
+    <nav class="md-nav" aria-label="Получение всего списка персонажей">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Ответы сервера:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     Получение информация о персонаже
   </a>
+  
+    <nav class="md-nav" aria-label="Получение информация о персонаже">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Ответы сервера:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -412,7 +424,61 @@
   <h1>Персонажи</h1>
 
 <h2 id="_1">Получение всего списка персонажей<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<h2 id="_2">Получение информация о персонаже<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">TypeScript</label><label for="__tabbed_1_2">CURL</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">GenshinInfoClient</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;genshin-info-api&#39;</span><span class="p">;</span>
+<span class="k">await</span> <span class="ow">new</span> <span class="nx">GenshinInfoClient</span><span class="p">(</span><span class="s1">&#39;TOKEN&#39;</span><span class="p">).</span><span class="nx">getCharacters</span><span class="p">({</span><span class="nx">lang</span><span class="o">:</span> <span class="s2">&quot;RU&quot;</span><span class="p">})</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl --location --request GET <span class="s1">&#39;https://api.genshin-info.top/v1/characters?lang=RU&#39;</span> <span class="se">\</span>
+--header <span class="s1">&#39;Authorization: TOKEN&#39;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="_2">Ответы сервера:<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">200</label><label for="__tabbed_2_2">404</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="err">ответ</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="p">{</span><span class="err">code</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w"> </span><span class="err">message</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Notfound&quot;</span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="_3">Получение информация о персонаже<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">TypeScript</label><label for="__tabbed_3_2">CURL</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span> <span class="nx">GenshinInfoClient</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;genshin-info-api&#39;</span><span class="p">;</span>
+<span class="k">await</span> <span class="ow">new</span> <span class="nx">GenshinInfoClient</span><span class="p">(</span><span class="s1">&#39;TOKEN&#39;</span><span class="p">).</span><span class="nx">getCharacter</span><span class="p">({</span><span class="nx">lang</span><span class="o">:</span> <span class="s2">&quot;RU&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Дилюк&quot;</span><span class="p">})</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl --location --request GET <span class="s1">&#39;https://api.genshin-info.top/v1/character?lang=RU&amp;name=Дилюк&#39;</span> <span class="se">\</span>
+--header <span class="s1">&#39;Authorization: TOKEN&#39;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="_4">Ответы сервера:<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">200</label><label for="__tabbed_4_2">404</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="err">ответ</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="p">{</span><span class="err">code</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w"> </span><span class="err">message</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Notfound&quot;</span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
 
               
             </article>
@@ -431,7 +497,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул">
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Назад: Основы" rel="prev">
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Назад: Главная" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -440,7 +506,7 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Основы
+              Главная
             </div>
           </div>
         </a>
@@ -453,7 +519,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Genshin info &copy 2021. Все права защищены.
+      Genshin info &copy 2022. Все права защищены.
     </div>
   
   
