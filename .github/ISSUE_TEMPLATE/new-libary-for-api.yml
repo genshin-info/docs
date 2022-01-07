@@ -2,38 +2,39 @@ name: New libary for API
 title: New libary for API
 assignees: MrLivixx
 labels: libary
-about: Describe about your libary
 body:
   - type: input
     id: Programinglang
-    attributes: Programing language
-    placeholder: TypeScript
+    attributes:
+      label: Programing language
+      placeholder: "TypeScript"
+      description: "Programing language"
     validations:
       required: true
-#   - type: input
-#     id: URL
-#     attributes:
-#       label: URI to libary (Github)
-#       description: "URI to your libary"
-#       placeholder: "https://github.com/genshin-info/genshin-info.js"
-#     validations:
-#       required: true
-#   - type: input
-#     id: Screenshot
-#     attributes:
-#       label: Screenshot of tests
-#       description: "Screenshot with tests"
-#       placeholder: "https://imgur.com/"
-#     validations:
-#       required: true
-#   - type: textarea
-#     id: testcode
-#     attributes:
-#       render: typescript
-#       label: "Example code for tests"
-#       description: "Example code for tests libary"
-#       placeholder: |
-#         import { GenshinInfoClient } from 'genshin-info-api';
-#         await new GenshinInfoClient('TOKEN').getCharacters({lang: "RU"})
-#     validations:
-#       required: true
+  - type: input
+    id: URL
+    attributes:
+      label: URI to libary (Github)
+      description: "URI to your libary"
+      placeholder: "https://github.com/genshin-info/genshin-info.js"
+    validations:
+      required: true
+  - type: input
+    id: Screenshot
+    attributes:
+      label: Screenshot of tests
+      description: "Screenshot with tests"
+      placeholder: "https://imgur.com/"
+    validations:
+      required: true
+  - type: textarea
+    id: testcode
+    attributes:
+      render: typescript
+      label: "Example code for tests"
+      description: "Example code for tests libary"
+      placeholder: |
+        import { GenshinInfoClient } from 'genshin-info-api';
+        await new GenshinInfoClient('TOKEN').getCharacters({lang: "RU"})
+    validations:
+      required: true
