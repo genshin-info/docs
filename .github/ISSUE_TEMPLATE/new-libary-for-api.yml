@@ -12,25 +12,25 @@ body:
     id: URL
     attributes:
       label: URI to libary (Github)
-    placeholder: https://github.com/genshin-info/genshin-info.js
+      placeholder: https://github.com/genshin-info/genshin-info.js
     validations:
       required: true
   - type: input
     id: Screenshot
     attributes:
       label: Screenshot of tests
-    placeholder: https://imgur.com/
+      placeholder: https://imgur.com/
     validations:
       required: true
   - type: textarea
     id: testcode
     attributes:
       label: Example code for tests
-    placeholder: |
-      ```typescript
-      import { GenshinInfoClient } from 'genshin-info-api';
-      await new GenshinInfoClient('TOKEN').getCharacters({lang: "RU"})
-      ```
+      placeholder: |
+        ```typescript
+        import { GenshinInfoClient } from 'genshin-info-api';
+        await new GenshinInfoClient('TOKEN').getCharacters({lang: "RU"})
+        ```
     validations:
       required: true
 
