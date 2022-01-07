@@ -4,8 +4,9 @@ labels: libary
 body:
   - type: input
     id: Programinglang
-    attributes: Programing language
-    placeholder: TypeScript
+    attributes:
+      label: Programing language
+      placeholder: TypeScript
     validations:
       required: true
   - type: input
