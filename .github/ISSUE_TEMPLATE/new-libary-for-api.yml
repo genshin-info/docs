@@ -6,37 +6,34 @@ body:
     id: Programinglang
     attributes:
       label: Programing language
-      description: Libary programing language
-      placeholder: TypeScript
+      description: "Libary programing language"
+      placeholder: "TypeScript"
     validations:
       required: true
   - type: input
     id: URL
     attributes:
       label: URI to libary (Github)
-      description: URI to your libary
-      placeholder: https://github.com/genshin-info/genshin-info.js
+      description: "URI to your libary"
+      placeholder: "https://github.com/genshin-info/genshin-info.js"
     validations:
       required: true
   - type: input
     id: Screenshot
     attributes:
       label: Screenshot of tests
-      description: Screenshot with tests
-      placeholder: https://imgur.com/
+      description: "Screenshot with tests"
+      placeholder: "https://imgur.com/"
     validations:
       required: true
   - type: textarea
     id: testcode
     attributes:
-      label: Example code for tests
-      description: Example code for tests libary
+      render: typescript
+      label: "Example code for tests"
+      description: "Example code for tests libary"
       placeholder: |
-        ```typescript
         import { GenshinInfoClient } from 'genshin-info-api';
         await new GenshinInfoClient('TOKEN').getCharacters({lang: "RU"})
-        ```
     validations:
       required: true
-
-
