@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.genshin-info.top/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.genshin-info.top/api/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.genshin-info.top/api/charteres/</loc>
-         <lastmod>2022-01-07</lastmod>
+         <lastmod>2022-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
