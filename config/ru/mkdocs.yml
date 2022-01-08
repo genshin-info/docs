@@ -1,6 +1,7 @@
 site_name: Genshin info
 site_url: https://docs.genshin-info.top/
 site_author: Genshin info
+repo_url: https://github.com/genshin-info/docs
 docs_dir: '../../docs/ru'
 site_dir: '../../generated/ru'
 site_description: >-
@@ -11,6 +12,8 @@ theme:
   custom_dir: '../../overrides/'
   logo: assets/images/logo.svg
   favicon: assets/images/logo.svg
+  icon:
+    repo: fontawesome/brands/github  
   language: ru
   font:
     text: Roboto
