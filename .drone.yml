@@ -1,0 +1,34 @@
+kind: pipeline
+type: docker
+name: test
+
+steps:
+  - name: Build mkdocs
+    image: python
+    commands:
+      - pip install mkdocs mkdocs-material mkdocs-redirects mkdocs-git-revision-date-localized-plugin 
+      - mkdocs --version   
+      - mkdocs build -f config/ru/mkdocs.yml
+  - name: discord notification
+    image: appleboy/drone-discord
+    settings:
+      username: Gitea
+      avatar_url: https://git.mrlivixx.me/assets/img/favicon.png
+      webhook_id:
+        from_secret: discord_webhook_id
+      webhook_token:
+        from_secret: discord_webhook_token
+      message: >
+        {{#success build.status}}
+          Build {{build.number}} succeeded.
+        {{else}}
+          Build {{build.number}} failed.
+        {{/success}}
+
+trigger:
+  branch:
+    - main
+    - dev
+  event:
+    - push
+    - pull_request
