@@ -84,3 +84,4 @@ nav:
       - Персонажи: api/charteres.md
       - Артефакты: api/artefacts.md
   - Часто заваемые вопросы: faq.md
+  - Внос вклада в проект: contributing.md
