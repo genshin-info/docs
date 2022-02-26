@@ -26,9 +26,11 @@ steps:
         {{/success}}
 
 trigger:
+  repo:
+    - genshin-info/docs
   branch:
     - main
     - dev
   event:
     - push
-    - pull_request
+    - pull_request 
