@@ -1,4 +1,4 @@
-# Получение всего списка персонажей
+# Получение всего списка персонажей # {: #charteres }
 === "TypeScript"
 
     ```typescript
@@ -13,7 +13,7 @@
     --header 'Authorization: TOKEN'
     ```
 
-## Ответы сервера:
+Ответы сервера:
 
 === "200"
 
@@ -24,15 +24,15 @@
 === "404"
 
     ```json
-     {code: 404, message: "Notfound"}
+     {statusCode: 404, message: "Notfound"}
     ```
 
-# Получение информация о персонаже
+# Получение информация о персонаже # {: #charterer}
 === "TypeScript"
 
     ```typescript
     import { GenshinInfoClient } from 'genshin-info-api';
-    await new GenshinInfoClient('TOKEN').getCharacter({lang: "RU", name:"Дилюк"})
+    await new GenshinInfoClient('TOKEN').getCharacter({lang: "RU", name: "Дилюк"})
     ```
 
 === "CURL"
@@ -42,7 +42,7 @@
     --header 'Authorization: TOKEN'
     ```
 
-## Ответы сервера:
+Ответы сервера:
 
 === "200"
 
@@ -53,7 +53,7 @@
 === "404"
 
     ```json
-     {code: 404, message: "Notfound"}
+     {statusCode: 404, message: "Notfound"}
     ```
 
 
