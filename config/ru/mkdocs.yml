@@ -1,9 +1,9 @@
 site_name: Genshin info
 site_url: https://docs.genshin-info.top/
 site_author: Genshin info
-repo_url: https://github.com/genshin-info/docs
+repo_url: https://git.mrlivixx.me/genshin-info/docs
 repo_name: genshin-info/docs
-edit_uri: edit/main/docs/ru
+edit_uri: _edit/main/docs/ru
 docs_dir: '../../docs/ru'
 site_dir: '../../generated/ru'
 site_description: >-
@@ -15,7 +15,7 @@ theme:
   logo: assets/images/logo.svg
   favicon: assets/images/logo.svg
   icon:
-    repo: fontawesome/brands/github  
+    repo: fontawesome/brands/git-alt
   language: ru
   font:
     text: Roboto
@@ -83,4 +83,6 @@ nav:
   - API:
       - Персонажи: api/charteres.md
       - Артефакты: api/artefacts.md
+      - Прочее: api/utils.md
   - Часто заваемые вопросы: faq.md
+  - Внос вклада в проект: contributing.md
