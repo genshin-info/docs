@@ -1,59 +1,132 @@
-# Получение всех артефактов # {: #arts }
-=== "TypeScript"
+---
+hide:
+- toc
+---
+# Артефакты
 
-    ```typescript
-    import { GenshinInfoClient } from 'genshin-info-api';
-    await new GenshinInfoClient('TOKEN').getArts({lang: "RU"})
-    ```
-
-=== "CURL"
-
-    ```shell
-    curl --location --request GET 'https://api.genshin-info.top/v1/arts?lang=RU' \
-    --header 'Authorization: TOKEN'
-    ```
-
-Ответы сервера:
-
-=== "200"
-
-    ```json
-    ответ
-    ```
-
-=== "404"
-
-    ```json
-     {statusCode: 404, message: "Notfound"}
-    ```
-
-# Получение информация о артефакте # {: #art }
-=== "TypeScript"
-
-    ```typescript
-    import { GenshinInfoClient } from 'genshin-info-api';
-    await new GenshinInfoClient('TOKEN').getArt({lang: "RU", name: "алая ведьма"})
-    ```
-
-=== "CURL"
-
-    ```shell
-    curl --location --request GET 'https://api.genshin-info.top/v1/art?lang=RU&name=алая ведьма' \
-    --header 'Authorization: TOKEN'
-    ```
-
-Ответы сервера:
-
-=== "200"
-
-    ```json
-    ответ
-    ```
-
-=== "404"
-
-    ```json
-     {statusCode: 404, message: "Notfound"}
-    ```
+На этой странице перечислены все API-методы, связанные с артефактами.
+_____
 
 
+!!! note "GET `https://api.genshin-info.top/v1/atrs?lang=RU|EN`"
+
+    === "Информация"
+
+        **Список артефактов**
+    
+        Этот API-метод выдаст список артефактов из базы данных.
+    
+    === "Параметры"
+    
+        | Параметр | Тип Данных | Описание |
+        |--------|--------------|----------|
+        | `Путь` |  Строка  |  |
+        | `lang` |  Строка  |  Язык ответа сервера (`EN` или `RU`) |
+
+    === "Ответ"
+        ??? success "Status-Code: 200"
+            
+            ```json
+            {
+                arts: [
+                    name: string,
+                    image: string,
+                    description: string,
+                    domain: domain,
+                    bonuskit: {
+                        two: string,
+                        four: string   
+                    }
+                ]
+            }
+            ```
+        ??? fail "Status-Code: 400 (Не указаны параметры)" 
+            
+            ```json
+            {
+                statusCode: 400,
+                error: string,
+                message?: string
+            }
+            ```
+
+
+???+ info "GET `https://api.genshin-info.top/v1/atr?lang=RU|EN&name=дилюк`"
+
+    === "Информация"
+
+        **Информация об артефакте**
+    
+        Этот API-метод выдаст информацию о определённом артефакте из базы данных.
+
+    
+    === "Параметры"
+    
+        | Параметр | Тип Данных | Описание |
+        |--------|--------------|----------|
+        | `Путь` |  Строка  |  |
+        | `lang` |  Строка  |  Язык ответа сервера (`EN` или `RU`) |
+        | `name` | Строка | Имя артефакта |
+
+    === "Ответ"
+        ??? success "Status-Code: 200"
+
+            
+            ```json
+            [
+                {
+                    userID: String,
+                    text: String,
+                    vote: Number,
+                    isUpdated: false,
+                    createdAt: Number
+                },
+                {
+                    userID: String,
+                    text: String,
+                    vote: Number,
+                    isUpdated: true,
+                    updatedAt: Number
+                }
+            ]
+            ```
+
+???+ danger "POST ```https://api.boticord.top/v1/stats```"
+
+    === "Информация"
+
+        **Отправка статистики бота**
+    
+        Этот API-метод принимает количество отправленных вами серверов, шардов и пользователей бота и обновляет его статистику.
+
+        **Отправляйте JSON-объект строкой. Пример (JavaScript):**
+
+        `body: JSON.stringify({ servers: 15573, shards: 7, users: 5283954 });`
+
+        !!! warning ""
+            **Этот метод требует указания API-токена!**
+    
+    === "Параметры"
+    
+        | Параметр | Тип Данных | Описание |
+        |--------|--------------|----------|
+        | `Путь` |  Строка  |  |
+
+    === "Тело запроса"
+    
+        | Ключ | Тип Данных | Описание |
+        |--------|--------------|----------|
+        | `servers` |  Число  | Количество "кешированных" ботом серверов |
+        | `shards` |  Число  | Количество шардов |
+        | `users` |  Число  | Количество "кешированных" ботом пользователей |
+
+    === "Ответ"
+        ??? success "Status-Code: 200 (Статистика бота обновлена)"
+
+            **Статистика бота обновлена (если ok == true).**
+            
+            ```json
+            {
+                "ok": true
+            }
+            ```
